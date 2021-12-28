@@ -20,16 +20,15 @@ function Cart() {
       <div className="row d-flex justify-content-center align-items-center">
         <div className="col-12">
           <h5>Cart ({totalUniqueItems}) total Item: ({totalItems})</h5>
-          <table className='table table-light table-hover m-0 '>
+          <table className='table table-borderless m-0'>
             <tbody>
               {items.map((item, index) => {
                 return (
-                    <tr key={index}>
-                    <div className='d-flex justify-content-between align-items-center'>
+                    <tr key={index} className='d-flex justify-content-between align-items-center'>
                       <td>
                         <img src={item.img} style={{ height: '6rem' }} alt="" />
                       </td>
-                      <td>{item.title}</td>
+                      <td >{item.title}</td>
                       <td>{item.price}</td>
                       <td>Quantity ({item.quantity})</td>
                       <td>
@@ -46,7 +45,6 @@ function Cart() {
                           onClick={() =>
                             removeItem(item.id, item.quantity)}>Remove item</button>
                       </td>
-                    </div>
                     </tr>
                 )
               })}
